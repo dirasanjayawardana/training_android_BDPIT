@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="40dp"
+        android:paddingBottom="25dp"
+        android:paddingHorizontal="30dp"
+        android:background="@drawable/background_blue_gradient"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="Admin"/>
+
+    <TextView
+        android:id="@+id/userInisial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/header"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="DS"
+        android:background="@drawable/background_circle_blue"
+        android:padding="15dp"
+        android:textSize="30sp"
+        android:textColor="@color/white"
+        android:layout_margin="25dp"/>
+
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/userInisial"
+        app:layout_constraintStart_toEndOf="@id/userInisial"
+        app:layout_constraintBottom_toBottomOf="@id/userInisial"
+        android:text="DIRA SANJAYA WARDANA"
+        android:textColor="@color/black"
+        android:layout_marginLeft="25dp"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:id="@+id/titleLayanan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/userInisial"
+        app:layout_constraintStart_toStartOf="@id/userInisial"
+        android:text="Layanan"
+        android:textStyle="bold"
+        android:textColor="#737373"
+        android:layout_marginTop="32dp"/>
+
+    <LinearLayout
+        android:id="@+id/layanan1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/titleLayanan"
+        app:layout_constraintStart_toStartOf="@id/userInisial"
+        android:orientation="horizontal"
+        android:paddingVertical="20dp"
+        android:layout_marginLeft="4dp"
+        android:gravity="center_vertical">
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/referal" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kode Referral"
+            android:layout_marginLeft="20dp"
+            android:textColor="#444"
+            android:textSize="16dp"/>
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:src="@drawable/baseline_arrow_forward_ios_24"
+        app:layout_constraintTop_toTopOf="@id/layanan1"
+        app:layout_constraintBottom_toBottomOf="@id/layanan1"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="40dp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#ececec"
+        app:layout_constraintTop_toBottomOf="@id/layanan1"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <LinearLayout
+        android:id="@+id/layanan2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/layanan1"
+        app:layout_constraintStart_toStartOf="@id/userInisial"
+        android:orientation="horizontal"
+        android:paddingVertical="20dp"
+        android:layout_marginLeft="4dp"
+        android:gravity="center_vertical">
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/location" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lokasi Cabang"
+            android:layout_marginLeft="20dp"
+            android:textColor="#444"
+            android:textSize="16dp"/>
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:src="@drawable/baseline_arrow_forward_ios_24"
+        app:layout_constraintTop_toTopOf="@id/layanan2"
+        app:layout_constraintBottom_toBottomOf="@id/layanan2"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="40dp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#ececec"
+        app:layout_constraintTop_toBottomOf="@id/layanan2"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/titleAdministrasi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/layanan2"
+        app:layout_constraintStart_toStartOf="@id/userInisial"
+        android:text="Administrasi"
+        android:textStyle="bold"
+        android:textColor="#737373"
+        android:layout_marginTop="20dp"/>
+
+    <LinearLayout
+        android:id="@+id/administrasi1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/titleAdministrasi"
+        app:layout_constraintStart_toStartOf="@id/userInisial"
+        android:orientation="horizontal"
+        android:paddingVertical="20dp"
+        android:layout_marginLeft="4dp"
+        android:gravity="center_vertical">
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/outline_email_24" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ubah Email"
+            android:layout_marginLeft="20dp"
+            android:textColor="#444"
+            android:textSize="16dp"/>
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:src="@drawable/baseline_arrow_forward_ios_24"
+        app:layout_constraintTop_toTopOf="@id/administrasi1"
+        app:layout_constraintBottom_toBottomOf="@id/administrasi1"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="40dp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#ececec"
+        app:layout_constraintTop_toBottomOf="@id/administrasi1"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <LinearLayout
+        android:id="@+id/administrasi2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/administrasi1"
+        app:layout_constraintStart_toStartOf="@id/userInisial"
+        android:orientation="horizontal"
+        android:paddingVertical="20dp"
+        android:layout_marginLeft="4dp"
+        android:gravity="center_vertical">
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/lock" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ubah Kode Akses"
+            android:layout_marginLeft="20dp"
+            android:textColor="#444"
+            android:textSize="16dp"/>
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:src="@drawable/baseline_arrow_forward_ios_24"
+        app:layout_constraintTop_toTopOf="@id/administrasi2"
+        app:layout_constraintBottom_toBottomOf="@id/administrasi2"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="40dp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#ececec"
+        app:layout_constraintTop_toBottomOf="@id/administrasi2"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <LinearLayout
+        android:id="@+id/administrasi3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/administrasi2"
+        app:layout_constraintStart_toStartOf="@id/userInisial"
+        android:orientation="horizontal"
+        android:paddingVertical="20dp"
+        android:layout_marginLeft="4dp"
+        android:gravity="center_vertical">
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/pin" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ubah mPIN"
+            android:layout_marginLeft="20dp"
+            android:textColor="#444"
+            android:textSize="16dp"/>
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:src="@drawable/baseline_arrow_forward_ios_24"
+        app:layout_constraintTop_toTopOf="@id/administrasi3"
+        app:layout_constraintBottom_toBottomOf="@id/administrasi3"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="40dp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#ececec"
+        app:layout_constraintTop_toBottomOf="@id/administrasi3"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

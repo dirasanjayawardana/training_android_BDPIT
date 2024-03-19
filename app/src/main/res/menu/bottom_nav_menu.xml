@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navHome"
+        android:title="Beranda"
+        android:icon="@drawable/home"/>
+
+    <item
+        android:id="@+id/navInbox"
+        android:title="Inbox"
+        android:icon="@drawable/message"/>
+
+    <item
+        android:id="@+id/navAdmin"
+        android:title="Admin"
+        android:icon="@drawable/admin"/>
+
+    <item
+        android:id="@+id/navMessage"
+        android:title="Message"
+        android:icon="@drawable/inbox"/>
+
+    <item
+        android:id="@+id/navLogout"
+        android:title="Logout"
+        android:icon="@drawable/logout"/>
+
+</menu>

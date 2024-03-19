@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingVertical="12dp"
+    android:paddingHorizontal="16dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+   <TextView
+       android:id="@+id/textTransferType"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       app:layout_constraintTop_toTopOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       android:textStyle="bold"
+       android:textColor="#000"
+       tools:text="Pembayaran QR"/>
+
+    <TextView
+       android:id="@+id/textTransferDestination"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       app:layout_constraintTop_toBottomOf="@+id/textTransferType"
+       app:layout_constraintStart_toStartOf="@+id/textTransferType"
+       android:textColor="#000"
+       tools:text="QRIS TOKO ABC"/>
+
+    <TextView
+       android:id="@+id/textDateTransaction"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       app:layout_constraintTop_toBottomOf="@+id/textTransferDestination"
+       app:layout_constraintStart_toStartOf="@+id/textTransferType"
+       android:textColor="#000"
+       tools:text="23/05/24"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/textTransferType"
+        app:layout_constraintBottom_toBottomOf="@+id/textDateTransaction"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/textStatusTransaction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textColor="#000"
+            tools:text="Sukses"/>
+
+        <TextView
+            android:id="@+id/textAmountTransaction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            tools:text="Rp 1.500.000"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
