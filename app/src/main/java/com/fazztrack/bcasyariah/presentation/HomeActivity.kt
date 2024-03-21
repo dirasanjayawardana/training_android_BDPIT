@@ -1,6 +1,7 @@
 package com.fazztrack.bcasyariah.presentation
 
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -56,6 +57,7 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        changeStatusBarColor()
 
         // inisialisasi sharePref agar bisa digunakan
         sharePref = SharePrefHelper(this)
@@ -91,6 +93,14 @@ class HomeActivity : AppCompatActivity() {
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragmentContainer, fragment)
             .commit()
+    }
+
+    private fun changeStatusBarColor() {
+        // Check if the Android version is Lollipop or higher
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            // Set the status bar color to your desired color
+            window.statusBarColor = resources.getColor(R.color.statusBar, theme)
+        }
     }
 
 }

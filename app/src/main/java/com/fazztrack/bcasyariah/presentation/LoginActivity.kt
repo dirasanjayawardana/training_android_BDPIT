@@ -115,7 +115,7 @@ class LoginActivity : AppCompatActivity() {
         // Check if the Android version is Lollipop or higher
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             // Set the status bar color to your desired color
-            window.statusBarColor = resources.getColor(R.color.blue, theme)
+            window.statusBarColor = resources.getColor(R.color.statusBar, theme)
         }
     }
 }
