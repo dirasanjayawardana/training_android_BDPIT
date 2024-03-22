@@ -57,7 +57,7 @@ class DashboardViewModel : ViewModel() {
     }
 
     // isi data homeMenu
-    fun getHomeMenu() = viewModelScope.launch(Dispatchers.IO){
+    fun getHomeMenu( ) = viewModelScope.launch(Dispatchers.IO){
         _homeMenu.postValue(populateDataMenu())
     }
 
