@@ -4,7 +4,9 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.fazztrack.bcasyariah.presentation.RegisterActivity.Companion.KEY_NAME
 import com.fazztrack.bcasyariah.databinding.ActivityProfileBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class ProfileActivity: AppCompatActivity() {
 
     // membuat view binding, untuk menggantikan findViewById

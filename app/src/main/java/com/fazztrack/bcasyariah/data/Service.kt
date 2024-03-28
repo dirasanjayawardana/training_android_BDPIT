@@ -6,6 +6,6 @@ import retrofit2.http.GET
 
 interface Service {
 
-    @GET("/menu-dashboard")
+    @GET("menu-dashboard")
     suspend fun getHomeMenu(): Response<MenuDashboardResponse>
 }

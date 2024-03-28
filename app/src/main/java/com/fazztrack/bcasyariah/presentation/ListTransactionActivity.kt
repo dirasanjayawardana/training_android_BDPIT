@@ -7,7 +7,9 @@ import androidx.appcompat.app.AppCompatActivity
 import com.fazztrack.bcasyariah.adapter.ListTransactionAdapter
 import com.fazztrack.bcasyariah.databinding.ActivityListTransactionBinding
 import com.fazztrack.bcasyariah.model.TransactionModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class ListTransactionActivity: AppCompatActivity() {
 
     private lateinit var binding: ActivityListTransactionBinding

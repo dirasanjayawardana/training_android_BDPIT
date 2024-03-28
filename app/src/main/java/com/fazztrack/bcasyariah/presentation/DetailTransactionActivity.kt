@@ -9,7 +9,9 @@ import com.fazztrack.bcasyariah.R
 import com.fazztrack.bcasyariah.databinding.ActivityDetailTransactionBinding
 import com.fazztrack.bcasyariah.model.TransactionModel
 import com.fazztrack.bcasyariah.presentation.ListTransactionActivity.Companion.TRANSACTION_KEY
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class DetailTransactionActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityDetailTransactionBinding

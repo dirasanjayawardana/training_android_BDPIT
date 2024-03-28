@@ -10,6 +10,7 @@ import com.affan.bcas_app.base.BaseFragment
 import com.fazztrack.bcasyariah.R
 import com.fazztrack.bcasyariah.databinding.FragmentDashboardBinding
 import com.fazztrack.bcasyariah.model.AccountBalanceModel
+import com.fazztrack.bcasyariah.model.MenuDashboard
 import com.fazztrack.bcasyariah.model.MenuDashboardModel
 import com.fazztrack.bcasyariah.model.PromoModel
 import com.fazztrack.bcasyariah.presentation.fragment.adapter.AccountBalanceAdapter
@@ -17,10 +18,12 @@ import com.fazztrack.bcasyariah.presentation.fragment.adapter.DashboardMenuAdapt
 import com.fazztrack.bcasyariah.presentation.fragment.adapter.PromoAdapter
 import com.fazztrack.bcasyariah.presentation.viewmodel.DashboardViewModel
 import com.fazztrack.bcasyariah.utils.HorizontalItemDecoration
+import dagger.hilt.android.AndroidEntryPoint
 
 // fragment bisa ditampilkan di activity, satu activity bisa memiliki banyak fragment
 // tinggal diatur saja fragment mana yang mau ditampilkan dipaling depan
 
+@AndroidEntryPoint
 class DashboardFragment : BaseFragment<FragmentDashboardBinding>() {
 
     private val viewModel: DashboardViewModel by viewModels()
@@ -52,19 +55,25 @@ class DashboardFragment : BaseFragment<FragmentDashboardBinding>() {
 
     }
 
-    private fun observeViewModel(){
-        viewModel.homeMenu.observe(viewLifecycleOwner){data ->
-            setUpViewMenu(data)
+    private fun observeViewModel() {
+        viewModel.homeMenu.observe(viewLifecycleOwner) { it ->
+            setUpViewMenu(it.data)
         }
 
-        viewModel.accountBalance.observe(viewLifecycleOwner){data ->
-            setUpViewAccountBalance(data)
+        viewModel.accountBalance.observe(viewLifecycleOwner) { it ->
+            setUpViewAccountBalance(it)
         }
     }
 
-    private fun setUpViewMenu(data: List<MenuDashboardModel>) {
+    private fun setUpViewMenu(data: List<MenuDashboard>?) {
+//        if (!data.isNullOrEmpty().not()) {
+//
+//        } else {
+//
+//        }
+
         menuAdapter = DashboardMenuAdapter(
-            menuData = data,
+            menuData = data ?: listOf(),
             context = binding.root.context
         )
 
@@ -73,7 +82,7 @@ class DashboardFragment : BaseFragment<FragmentDashboardBinding>() {
             AdapterView.OnItemClickListener { _, _, position, _ ->
                 Toast.makeText(
                     binding.root.context,
-                    data[position].menuName,
+                    data?.get(position)?.nameMenu,
                     Toast.LENGTH_SHORT
                 ).show()
             }
@@ -90,7 +99,7 @@ class DashboardFragment : BaseFragment<FragmentDashboardBinding>() {
 
         // menambahkan styling untuk setiap item recycleView
         binding.componentBalance.rvAccountBalance.apply {
-            if(itemDecorationCount <=0){
+            if (itemDecorationCount <= 0) {
                 addItemDecoration(horizontalItemDecoration)
             }
         }
@@ -107,7 +116,7 @@ class DashboardFragment : BaseFragment<FragmentDashboardBinding>() {
 
         // menambahkan styling untuk setiap item recycleView
         binding.componentPromo.rvPromo.apply {
-            if(itemDecorationCount <=0){
+            if (itemDecorationCount <= 0) {
                 addItemDecoration(horizontalItemDecoration)
             }
         }

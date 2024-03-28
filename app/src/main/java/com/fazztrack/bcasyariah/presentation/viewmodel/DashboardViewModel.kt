@@ -5,60 +5,43 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.fazztrack.bcasyariah.R
+import com.fazztrack.bcasyariah.data.remote.MenuDashboardRemoteDataSource
 import com.fazztrack.bcasyariah.model.AccountBalanceModel
+import com.fazztrack.bcasyariah.model.MenuDashboard
 import com.fazztrack.bcasyariah.model.MenuDashboardModel
+import com.fazztrack.bcasyariah.model.MenuDashboardResponse
 import com.fazztrack.bcasyariah.model.PromoModel
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 // tempat menyalurkan data dari useCase ke view
 
-class DashboardViewModel : ViewModel() {
+@HiltViewModel
+class DashboardViewModel @Inject constructor(private val menuDashboardRemoteDataSource: MenuDashboardRemoteDataSource) : ViewModel() {
 
     // menggunakan _ menunjukkan variabel private
     //_homeMenu menampung semua logic dari MutableLiveData<>, bersifat private karena menampung semua logic, sebagai setter
-    private val _homeMenu = MutableLiveData<List<MenuDashboardModel>>()
+    private val _homeMenu = MutableLiveData<MenuDashboardResponse>()
 
     // homeMenu hanya akan berisi return value dari logic MutableLiveData<>, sebagai getter
-    val homeMenu: LiveData<List<MenuDashboardModel>> get() = _homeMenu
+    val homeMenu: LiveData<MenuDashboardResponse> get() = _homeMenu
 
-    // data dari homeMenu, sebagiknya disimpan dalam useCase
-    private fun populateDataMenu(): List<MenuDashboardModel> {
-        return listOf(
-            MenuDashboardModel(
-                image = R.drawable.menu1,
-                menuName = "Transfer"
-            ),
-            MenuDashboardModel(
-                image = R.drawable.menu2,
-                menuName = "Pembelian"
-            ),
-            MenuDashboardModel(
-                image = R.drawable.menu3,
-                menuName = "Pembayaran"
-            ),
-            MenuDashboardModel(
-                image = R.drawable.menu4,
-                menuName = "Cardless"
-            ),
-            MenuDashboardModel(
-                image = R.drawable.menu5,
-                menuName = "History Transaksi"
-            ),
-            MenuDashboardModel(
-                image = R.drawable.menu6,
-                menuName = "Mutasi Rekening"
-            ),
-            MenuDashboardModel(
-                image = R.drawable.menu7,
-                menuName = "Jadwal Sholat"
-            ),
-        )
-    }
+    // sebagai setter
+    private val _homeMenuError = MutableLiveData<String>()
+    // sebagai getter
+    val homeMenuError: LiveData<String> get() = _homeMenuError
 
     // isi data homeMenu
     fun getHomeMenu( ) = viewModelScope.launch(Dispatchers.IO){
-        _homeMenu.postValue(populateDataMenu())
+        menuDashboardRemoteDataSource.getMenuDashboard().let{
+            if (it.isSuccessful) {
+                _homeMenu.postValue(it.body())
+            } else {
+                _homeMenuError.postValue(it.message())
+            }
+        }
     }
 
     //------------------------------------------------------------------------------------//

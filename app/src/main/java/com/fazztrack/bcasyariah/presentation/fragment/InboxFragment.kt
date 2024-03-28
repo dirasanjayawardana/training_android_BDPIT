@@ -9,10 +9,12 @@ import com.fazztrack.bcasyariah.databinding.FragmentDashboardBinding
 import com.fazztrack.bcasyariah.databinding.FragmentInboxBinding
 import com.fazztrack.bcasyariah.adapter.ListTransactionAdapter
 import com.fazztrack.bcasyariah.model.TransactionModel
+import dagger.hilt.android.AndroidEntryPoint
 
 // fragment bisa ditampilkan di activity, satu activity bisa memiliki banyak fragment
 // tinggal diatur saja fragment mana yang mau ditampilkan dipaling depan
 
+@AndroidEntryPoint
 class InboxFragment : Fragment() {
 
     // membuat binding yg mutable

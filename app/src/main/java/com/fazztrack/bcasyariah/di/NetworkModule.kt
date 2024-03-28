@@ -22,7 +22,7 @@ object NetworkModule {
     @Provides
     fun  provideRetrofit(okHttpClient: OkHttpClient): Retrofit = Retrofit.Builder()
         .addConverterFactory(GsonConverterFactory.create())
-        .baseUrl("")
+        .baseUrl("https://private-9aae16-bcas.apiary-mock.com/")
         .client(okHttpClient)
         .build()
 

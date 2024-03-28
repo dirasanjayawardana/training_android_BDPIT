@@ -11,10 +11,12 @@ import com.fazztrack.bcasyariah.databinding.FragmentAdminBinding
 import com.fazztrack.bcasyariah.databinding.FragmentDashboardBinding
 import com.fazztrack.bcasyariah.model.TransactionModel
 import com.fazztrack.bcasyariah.presentation.DetailTransactionActivity
+import dagger.hilt.android.AndroidEntryPoint
 
 // fragment bisa ditampilkan di activity, satu activity bisa memiliki banyak fragment
 // tinggal diatur saja fragment mana yang mau ditampilkan dipaling depan
 
+@AndroidEntryPoint
 class AdminFragment : Fragment() {
 
     // membuat binding yg mutable

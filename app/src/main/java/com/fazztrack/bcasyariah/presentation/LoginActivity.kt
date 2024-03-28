@@ -9,8 +9,11 @@ import androidx.appcompat.app.AppCompatActivity
 import com.fazztrack.bcasyariah.R
 import com.fazztrack.bcasyariah.databinding.ActivityLoginBinding
 import com.fazztrack.bcasyariah.utils.SharePrefHelper
+import dagger.hilt.android.AndroidEntryPoint
 import java.util.UUID
 
+
+@AndroidEntryPoint
 class LoginActivity : AppCompatActivity() {
 
     // membuat view binding,untuk menggantikan findViewById

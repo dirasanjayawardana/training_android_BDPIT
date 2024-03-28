@@ -8,9 +8,11 @@ import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
 import com.fazztrack.bcasyariah.R
+import com.fazztrack.bcasyariah.model.MenuDashboard
 import com.fazztrack.bcasyariah.model.MenuDashboardModel
 
-class DashboardMenuAdapter(private val menuData: List<MenuDashboardModel>, private val context: Context) : BaseAdapter() {
+class DashboardMenuAdapter(
+    private val menuData: List<MenuDashboard>, private val context: Context) : BaseAdapter() {
     private var image: ImageView? = null
     private var textMenu: TextView? = null
     private var layoutInflater: LayoutInflater? = null
@@ -44,8 +46,8 @@ class DashboardMenuAdapter(private val menuData: List<MenuDashboardModel>, priva
         val resultMenu = menuData[position]
 
         // melakukan set data image dan textview
-        image?.setImageResource(resultMenu.image)
-        textMenu?.text = resultMenu.menuName
+        // image?.setImageResource(resultMenu.image)
+        textMenu?.text = resultMenu.nameMenu
 
         return bindingView
     }

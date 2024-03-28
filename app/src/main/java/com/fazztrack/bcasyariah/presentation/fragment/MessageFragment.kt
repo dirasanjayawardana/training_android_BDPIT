@@ -6,7 +6,9 @@ import com.affan.bcas_app.base.BaseFragment
 import com.fazztrack.bcasyariah.adapter.MessageTabAdapter
 import com.fazztrack.bcasyariah.databinding.FragmentMessageBinding
 import com.google.android.material.tabs.TabLayoutMediator
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MessageFragment: BaseFragment<FragmentMessageBinding>(){
 
     private var adapterMessage : MessageTabAdapter? = null
